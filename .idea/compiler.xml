@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="bpm-finder" />
+        <module name="audio" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="bpm-finder" target="14" />
+      <module name="audio" target="14" />
     </bytecodeTargetLevel>
   </component>
 </project>

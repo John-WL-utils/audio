@@ -1,4 +1,4 @@
-package audio_file_converter;
+package audio.audio_file_converter;
 
 public enum AudioFileType {
     WAVE(".wav"),

@@ -1,10 +1,12 @@
-import audio_file_converter.AudioFileConverter;
+package audio;
+
+import audio.audio_file_converter.AudioFileConverter;
+import audio.rhythm_data.BPM;
+import audio.rhythm_data.Phase;
+import audio.wav_untangler.ChannelType;
+import audio.wav_untangler.WavDataUntangler;
 import org.jtransforms.fft.FloatFFT_1D;
-import rhythm_data.BPM;
-import rhythm_data.Offset;
 import util.data_structure.tupple.Tuple2;
-import wav_untangler.ChannelType;
-import wav_untangler.WavDataUntangler;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -14,9 +16,9 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-public class BpmOffsetAnalyser {
+public class BpmPhaseAnalyser {
 
-    public static Optional<List<Tuple2<BPM, Offset>>> extractRhythmData(final File soundFile) {
+    public static Optional<List<Tuple2<BPM, Phase>>> extractRhythmData(final File soundFile) {
         final Optional<AudioInputStream> audioInputStreamOpt =
                 AudioFileConverter.extractAudioInputStreamFromAudioFile(soundFile);
         if(audioInputStreamOpt.isEmpty()) {
@@ -41,9 +43,9 @@ public class BpmOffsetAnalyser {
 
         final BPM bpm = new BPM();
         bpm.set(bpmAndOffset.value1);
-        final Offset offset = new Offset();
-        offset.set(bpmAndOffset.value2);
-        return Optional.of(List.of(new Tuple2<>(bpm, offset)));
+        final Phase phase = new Phase();
+        phase.set(bpmAndOffset.value2);
+        return Optional.of(List.of(new Tuple2<>(bpm, phase)));
     }
 
     private static Optional<Tuple2<Double, Double>> findBpmOfSoundBuffer(float[] unused, float[] a, final AudioFormat audioFormat) {

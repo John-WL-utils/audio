@@ -1,4 +1,4 @@
-package wav_untangler;
+package audio.wav_untangler;
 
 import javax.sound.sampled.AudioFormat;
 

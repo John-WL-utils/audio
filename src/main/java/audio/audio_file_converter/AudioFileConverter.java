@@ -1,4 +1,4 @@
-package audio_file_converter;
+package audio.audio_file_converter;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
