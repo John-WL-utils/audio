@@ -2,7 +2,7 @@ package audio.fft;
 
 import util.math.vector.Vector2;
 
-public class ComplexFftDataUniper {
+public class ComplexFftDataUnziper {
 
     public static Vector2[] unzip(final double[] fftData) {
         final Vector2[] unzipped = new Vector2[fftData.length/2];
