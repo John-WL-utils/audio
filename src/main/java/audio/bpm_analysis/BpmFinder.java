@@ -26,7 +26,8 @@ public class BpmFinder {
         final byte[] audioData;
         try {
             audioData = audioInputStream.readAllBytes();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
             return Optional.empty();
         }
